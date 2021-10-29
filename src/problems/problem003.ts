@@ -9,18 +9,6 @@ export const problem003: Problem = {
   run: () => {
     const targetNumber = 600851475143
 
-    const isPrime = (num: number) => {
-      const notPrime = () => {
-        for (let i = 2; i < num; i++) {
-          if (num % i === 0) {
-            return true
-          }
-        }
-      }
-
-      return !notPrime
-    }
-
     const findFactors = (
       num: number
     ): { left: number; right: number } | null => {
