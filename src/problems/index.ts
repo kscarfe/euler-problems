@@ -1,3 +1,4 @@
+import chalk from 'chalk'
 import { problem001 } from './problem001'
 import { problem002 } from './problem002'
 import { problem003 } from './problem003'
@@ -20,11 +21,15 @@ const problemsMap: Record<string, Problem> = {
 }
 
 export const runProblem = (number: string) => {
-  const { problemDetails, run } = problemsMap[number]
+  const problem = problemsMap[number]
+  if (!problem) throw new Error(`No problem found with id: ${number}`)
+
+  const { problemDetails, run } = problem
   const { problemNumber, title, description } = problemDetails
 
-  console.log(`Problem ${problemNumber}: ${title}\n${description}`)
-  console.log(`Answer: ${run()}`)
+  console.log(chalk.green(`Problem ${problemNumber}: ${title}`))
+  console.log(`${chalk.green('Description:')} ${description}\n`)
+  console.log(`${chalk.green('Answer:')} ${run()}\n`)
 }
 
 export default runProblem
