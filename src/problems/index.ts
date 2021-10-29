@@ -7,9 +7,10 @@ import { problem005 } from './problem005'
 import { problem006 } from './problem006'
 import { problem007 } from './problem007'
 import { problem008 } from './problem008'
+import { problem009 } from './problem009'
+import { problem010 } from './problem010'
 
 export interface ProblemDetails {
-  problemNumber: number
   title: string
   description: string
 }
@@ -27,7 +28,9 @@ const problemsMap: Record<string, Problem> = {
   '005': problem005,
   '006': problem006,
   '007': problem007,
-  '008': problem008
+  '008': problem008,
+  '009': problem009,
+  '010': problem010
 }
 
 export const runProblem = (number: string) => {
@@ -35,7 +38,9 @@ export const runProblem = (number: string) => {
   if (!problem) throw new Error(`No problem found with id: ${number}`)
 
   const { problemDetails, run } = problem
-  const { problemNumber, title, description } = problemDetails
+  const { title, description } = problemDetails
+
+  const problemNumber = parseInt(number)
 
   console.log(chalk.green(`Problem ${problemNumber}: ${title}`))
   console.log(`${chalk.green('Description:')} ${description}\n`)

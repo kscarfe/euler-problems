@@ -2,7 +2,6 @@ import { Problem } from './index'
 
 export const problem005: Problem = {
   problemDetails: {
-    problemNumber: 1,
     title: `Smallest multiple`,
     description: `2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.\nWhat is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?`
   },
