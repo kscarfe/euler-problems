@@ -1,11 +1,12 @@
 import chalk from 'chalk'
-import { problem007 } from './problem007'
-import { problem006 } from './problem006'
-import { problem005 } from './problem005'
-import { problem004 } from './problem004'
-import { problem003 } from './problem003'
-import { problem002 } from './problem002'
 import { problem001 } from './problem001'
+import { problem002 } from './problem002'
+import { problem003 } from './problem003'
+import { problem004 } from './problem004'
+import { problem005 } from './problem005'
+import { problem006 } from './problem006'
+import { problem007 } from './problem007'
+import { problem008 } from './problem008'
 
 export interface ProblemDetails {
   problemNumber: number
@@ -25,7 +26,8 @@ const problemsMap: Record<string, Problem> = {
   '004': problem004,
   '005': problem005,
   '006': problem006,
-  '007': problem007
+  '007': problem007,
+  '008': problem008
 }
 
 export const runProblem = (number: string) => {
