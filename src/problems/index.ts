@@ -1,3 +1,4 @@
+import { problem004 } from './problem004'
 import chalk from 'chalk'
 import { problem001 } from './problem001'
 import { problem002 } from './problem002'
@@ -17,7 +18,8 @@ export interface Problem {
 const problemsMap: Record<string, Problem> = {
   '001': problem001,
   '002': problem002,
-  '003': problem003
+  '003': problem003,
+  '004': problem004
 }
 
 export const runProblem = (number: string) => {
