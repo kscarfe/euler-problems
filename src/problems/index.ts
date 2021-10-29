@@ -10,6 +10,8 @@ import { problem008 } from './problem008'
 import { problem009 } from './problem009'
 import { problem010 } from './problem010'
 import { problem011 } from './problem011'
+import { problem012 } from './problem012'
+import { problem013 } from './problem013'
 
 export interface ProblemDetails {
   title: string
@@ -32,7 +34,9 @@ const problemsMap: Record<string, Problem> = {
   '008': problem008,
   '009': problem009,
   '010': problem010,
-  '011': problem011
+  '011': problem011,
+  '012': problem012,
+  '013': problem013
 }
 
 export const runProblem = (number: string) => {

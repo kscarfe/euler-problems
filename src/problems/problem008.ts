@@ -1,7 +1,8 @@
+import { strDigitsProduct } from './helpers/math'
 import { isPrime } from './helpers/prime'
 import { Problem } from './index'
 
-const numblock = `73167176531330624919225119674426574742355349194934
+const numberGridString = `73167176531330624919225119674426574742355349194934
 96983520312774506326239578318016984801869478851843
 85861560789112949495459501737958331952853208805511
 12540698747158523863050715693290963295227443043557
@@ -25,20 +26,13 @@ const numblock = `73167176531330624919225119674426574742355349194934
 export const problem008: Problem = {
   problemDetails: {
     title: `Largest product in a series`,
-    description: `The four adjacent digits in the 1000-digit number that have the greatest product are 9 × 9 × 8 × 9 = 5832.\n\n${numblock}\n\nFind the thirteen adjacent digits in the 1000-digit number that have the greatest product. What is the value of this product?`
+    description: `The four adjacent digits in the 1000-digit number that have the greatest product are 9 × 9 × 8 × 9 = 5832.\n\n${numberGridString}\n\nFind the thirteen adjacent digits in the 1000-digit number that have the greatest product. What is the value of this product?`
   },
   run: () => {
-    const strDigitsProduct = (str: string) => {
-      const nums = str.split('').map(digit => parseInt(digit))
-      return nums.reduce((acc, cur) => {
-        return acc * cur
-      }, 1)
-    }
-
     const numAdjacentDigits = 13
     let largestProduct = 0
 
-    const numberString = numblock.split('\n').join('')
+    const numberString = numberGridString.split('\n').join('')
     const length = numberString.length
 
     for (let i = 0; i <= length - numAdjacentDigits; i++) {
