@@ -10,11 +10,11 @@ export const problem006: Problem = {
     let sum = 0
 
     for (let n = 1; n <= 100; n++) {
-      sumSquares += Math.sqrt(n)
+      sumSquares += Math.pow(n, 2)
       sum += n
     }
 
-    const squareSum = Math.sqrt(sum)
+    const squareSum = Math.pow(sum, 2)
 
     return Math.abs(squareSum - sumSquares)
   }
