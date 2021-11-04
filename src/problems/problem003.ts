@@ -39,8 +39,6 @@ export const problem003: Problem = {
     const primeFactors = findPrimeFactors(targetNumber, [])
     const largestPrimeFactor = primeFactors ? Math.max(...primeFactors) : null
 
-    console.log(`Prime factors: ${primeFactors}`)
-
     return largestPrimeFactor
   }
 }
