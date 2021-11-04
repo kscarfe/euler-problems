@@ -1,4 +1,4 @@
-import { sum } from './helpers/math'
+import { properDivisors, sum } from './helpers/math'
 import { Problem } from './index'
 
 export const problem021: Problem = {
@@ -12,23 +12,11 @@ export const problem021: Problem = {
     Evaluate the sum of all the amicable numbers under 10000.`
   },
   run: () => {
-    const divisors = (num: number): number[] => {
-      const limit = num / 2
-      const divisors = [1]
-      for (let i = 2; i <= limit; i++) {
-        if (num % i === 0) {
-          divisors.push(i)
-        }
-      }
-
-      return divisors
-    }
-
     const target = 10000
     let amicableNumbers: number[] = []
     for (let i = 2; i <= target; i++) {
-      const sumA = sum(divisors(i))
-      const sumB = sum(divisors(sumA))
+      const sumA = sum(properDivisors(i))
+      const sumB = sum(properDivisors(sumA))
       if (sumB === i && sumA !== i) {
         if (!amicableNumbers.includes(i)) {
           amicableNumbers.push(i)

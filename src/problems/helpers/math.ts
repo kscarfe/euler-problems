@@ -108,3 +108,15 @@ export const longFactorial = (num: number): string => {
 
   return runningTotalString
 }
+
+export const properDivisors = (num: number): number[] => {
+  const limit = num / 2
+  const divisors = [1]
+  for (let i = 2; i <= limit; i++) {
+    if (num % i === 0) {
+      divisors.push(i)
+    }
+  }
+
+  return divisors
+}
