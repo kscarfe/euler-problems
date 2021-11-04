@@ -21,3 +21,28 @@ export const groupByN = (
 
   return result
 }
+
+export const permutations = (digits: number[]): number[][] => {
+  const permutations = [digits.slice()]
+  const length = digits.length
+  const used = new Array(length).fill(0)
+
+  let i = 1
+  let k = 0
+  let temp = 0
+  while (i < length) {
+    if (used[i] < i) {
+      k = i % 2 && used[i]
+      temp = digits[i]
+      digits[i] = digits[k]
+      digits[k] = temp
+      ++used[i]
+      i = 1
+      permutations.push(digits.slice())
+    } else {
+      used[i] = 0
+      ++i
+    }
+  }
+  return permutations
+}

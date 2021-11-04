@@ -1,6 +1,5 @@
 import { properDivisors, sum } from './helpers/math'
 import { Problem } from '.'
-import { logger } from './helpers/logger'
 
 export const problem023: Problem = {
   problemDetails: {
