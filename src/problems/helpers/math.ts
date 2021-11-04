@@ -99,3 +99,12 @@ const getLastAndCarryOver = (
 
   return { lastDigit: parseInt(lastDigit), carryOver: parseInt(carryOver) }
 }
+
+export const longFactorial = (num: number): string => {
+  let runningTotalString = num.toString()
+  for (let i = num - 1; i > 0; i--) {
+    runningTotalString = longProduct(runningTotalString, i)
+  }
+
+  return runningTotalString
+}
