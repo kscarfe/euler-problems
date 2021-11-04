@@ -1,6 +1,4 @@
 import { groupByN } from './helpers/array'
-import { logger } from './helpers/logger'
-import { longProduct, longSum } from './helpers/math'
 import { Problem } from './index'
 
 export const problem017: Problem = {

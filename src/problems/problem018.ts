@@ -1,4 +1,3 @@
-import { logger } from './helpers/logger'
 import { numberGridStringToNumberArray } from './helpers/numberGridString'
 import { Problem } from './index'
 

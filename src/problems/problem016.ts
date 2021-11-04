@@ -1,4 +1,3 @@
-import { logger } from './helpers/logger'
 import { longProduct, longSum } from './helpers/math'
 import { Problem } from './index'
 

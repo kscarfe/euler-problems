@@ -1,5 +1,4 @@
 import { strDigitsProduct } from './helpers/math'
-import { isPrime } from './helpers/prime'
 import { Problem } from './index'
 
 const numberGridString = `73167176531330624919225119674426574742355349194934
