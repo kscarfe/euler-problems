@@ -1,5 +1,3 @@
-import { logger } from './logger'
-
 export const product = (nums: number[]) => {
   return nums.reduce((acc, curr) => {
     return acc * curr
@@ -87,6 +85,47 @@ export const longProduct = (a: string | number, b: string | number): string => {
   }
 
   return longSum(products)
+}
+
+export const longDivision = (
+  dividend: number,
+  divisor: number,
+  toDecimalPlaces?: number
+): string => {
+  const dividendParts = dividend.toString().split('.')
+  const startingDecimalPlaces = dividendParts[1]?.length || 0
+  const decimalIndex = dividendParts[0].length
+  const dividendArray = dividend
+    .toString()
+    .split('')
+    .map(val => (val !== '.' ? parseInt(val) : null))
+    .filter(Boolean) as number[]
+
+  if (toDecimalPlaces) {
+    for (let i = startingDecimalPlaces; i < toDecimalPlaces; i++) {
+      dividendArray.push(0)
+    }
+  }
+
+  let resultArray: number[] = []
+  let bottomNumber1 = 0
+  let bottomNumber2 = 0
+  dividendArray.forEach(n => {
+    bottomNumber1 = bottomNumber1 * 10 + n
+    const answer = Math.floor(bottomNumber1 / divisor)
+    resultArray.push(answer)
+    bottomNumber2 = answer * divisor
+    bottomNumber1 -= bottomNumber2
+  })
+
+  const resultArrayStr = resultArray.join('')
+  const resultStr = toDecimalPlaces
+    ? resultArrayStr.substring(0, decimalIndex) +
+      '.' +
+      resultArrayStr.substring(decimalIndex)
+    : resultArrayStr
+
+  return resultStr
 }
 
 const getLastAndCarryOver = (
