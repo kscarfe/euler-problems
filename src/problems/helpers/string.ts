@@ -31,7 +31,7 @@ export const trimString = (
   if (from === 'end' || from === 'both') {
     for (let i = trimmedStr.length - 1; i > 0; i--) {
       if (trimmedStr[i] !== char) {
-        trimmedStr = trimmedStr.substring(0, i)
+        trimmedStr = trimmedStr.substring(0, i + 1)
         break
       }
     }
