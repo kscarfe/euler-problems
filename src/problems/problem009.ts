@@ -16,7 +16,7 @@ export const problem009: Problem = {
     const limit = 1000
 
     const isTriplet = (a: number, b: number, c: number) => {
-      return Math.pow(a, 2) + Math.pow(b, 2) === Math.pow(c, 2)
+      return a * a + b * b === c * c
     }
 
     for (let a = 0; a < limit; a++) {
