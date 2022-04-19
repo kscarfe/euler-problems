@@ -70,11 +70,6 @@ export const problem026: Problem = {
                 longestCycleDivisor = i
                 longestCycleDecimalPart = trimmedDecimalPart
                 longestCyclePart = subStr
-
-                logger(`i: ${i}, j: ${j}, k: ${k}`)
-                logger(
-                  `trimmedDecimalPart: ${trimmedDecimalPart}, subStr: ${subStr}`
-                )
               }
 
               // stop evaluating the current divisor and move to the next
@@ -85,10 +80,6 @@ export const problem026: Problem = {
         }
       }
     }
-
-    console.log(`longestCycle: ${longestCycle}`)
-    console.log(`longestCycleDecimalPart: ${longestCycleDecimalPart}`)
-    console.log(`longestCyclePart: ${longestCyclePart}`)
 
     return longestCycleDivisor
   }
